@@ -1,6 +1,10 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';
+import {
+  GraphqlExceptionFilter,
+  GlobalExceptionFilter,
+} from './shared/filters';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -15,6 +19,8 @@ async function bootstrap() {
       transform: true, // auto-transform payloads to DTO classes
     }),
   );
+  app.useGlobalFilters(new GraphqlExceptionFilter());
+  app.useGlobalFilters(new GlobalExceptionFilter());
   await app.listen(process.env.PORT ?? 3000);
 }
 bootstrap();

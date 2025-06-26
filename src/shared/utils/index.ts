@@ -1,4 +1,4 @@
-import { responseMessage } from '../constants/response-message';
+import { responseMessage } from '../constants';
 
 export const getResponseMessage = (
   code: keyof typeof responseMessage,
@@ -8,4 +8,13 @@ export const getResponseMessage = (
     /{}/g,
     () => placeholderValues.shift() || '',
   );
+};
+
+export const constructErrColumns = (columns: string[]) => {
+  let lastColumn = columns.pop();
+  let joinedColumns = columns.length
+    ? `${columns.join(',')} and ${lastColumn}`
+    : (lastColumn as string);
+
+  return joinedColumns;
 };

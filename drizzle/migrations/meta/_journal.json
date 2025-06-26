@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1750637829707,
+      "tag": "0000_petite_wolverine",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1750638536139,
+      "tag": "0001_remarkable_supreme_intelligence",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1750638601482,
+      "tag": "0002_superb_weapon_omega",
+      "breakpoints": true
+    }
+  ]
+}
