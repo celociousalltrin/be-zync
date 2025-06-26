@@ -40,18 +40,12 @@ const getDrizzleErrCodeAndMsg = (exception: any) => {
 };
 
 const getHttpExceptionErrCodeAndMsg = (exception: HttpException) => {
-  let msg;
-  let code = AppConstants.CUSTOM_EXCEPTION_DEFAULT_CODE;
-  let exceptionResponse = exception.getResponse();
-  if (typeof exceptionResponse === 'string') {
-    msg = exceptionResponse;
-  } else {
-    const res = exceptionResponse as {
-      message?: string;
-      statusCode?: number;
-    };
-    msg = res?.message;
-    code = res.statusCode ?? code;
-  }
-  return { code, msg };
+  const response = exception.getResponse();
+  const code = exception.getStatus();
+  let msg =
+    typeof response === 'string'
+      ? response
+      : (response as any)?.message || exception.message;
+
+  return { msg, code };
 };

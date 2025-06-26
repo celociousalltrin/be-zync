@@ -15,8 +15,8 @@ export class AuthService {
   }
 
   findAll() {
-    // throw new CustomException();
-    // throw new BadRequestException('New error');
+    // throw new CustomException('Sss', 22);
+    throw new BadRequestException('New error');
     return 'This returns the All the authentciate users';
   }
 
