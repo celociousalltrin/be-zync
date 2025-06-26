@@ -3,8 +3,23 @@
 # ------------------------------------------------------
 
 type Auth {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  """User FirstName"""
+  firstName: String!
+
+  """User LastName"""
+  lastName: String!
+
+  """User Email"""
+  email: String!
+
+  """User PhoneNumber"""
+  phoneNumber: String!
+
+  """User User Name"""
+  userName: String!
+
+  """User Passwordß"""
+  password: String!
 }
 
 type Query {
@@ -13,18 +28,50 @@ type Query {
 }
 
 type Mutation {
-  createAuth(createAuthInput: CreateAuthInput!): Auth!
+  createAuth(createAuthInput: CreateAuthInput!): String!
   updateAuth(updateAuthInput: UpdateAuthInput!): Auth!
   removeAuth(id: Int!): Auth!
 }
 
 input CreateAuthInput {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  """User FirstName"""
+  firstName: String!
+
+  """User LastName"""
+  lastName: String!
+
+  """User Email"""
+  email: String!
+
+  """User PhoneNumber"""
+  phoneNumber: String!
+
+  """User User Name"""
+  userName: String!
+
+  """User Passwordß"""
+  password: String!
 }
 
 input UpdateAuthInput {
-  """Example field (placeholder)"""
-  exampleField: Int
-  id: Int!
+  """User FirstName"""
+  firstName: String
+
+  """User LastName"""
+  lastName: String
+
+  """User Email"""
+  email: String
+
+  """User PhoneNumber"""
+  phoneNumber: String
+
+  """User User Name"""
+  userName: String
+
+  """User Passwordß"""
+  password: String
+
+  """PK for the user table"""
+  id: String!
 }

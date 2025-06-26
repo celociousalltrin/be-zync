@@ -15,13 +15,7 @@ import { GraphQLFormattedError } from 'graphql';
       formatError: (error: GraphQLFormattedError) => {
         return {
           message: error.message,
-          locations: error.locations,
-          path: error.path,
-          extensions: {
-            code: error.extensions?.code || 'INTERNAL_SERVER_ERROR',
-            statusCode: error.extensions?.statusCode || 500,
-            timestamp: new Date().toISOString(),
-          },
+          statusCode: error.extensions?.statusCode || 500,
         };
       },
     }),
